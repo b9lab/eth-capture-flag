@@ -7,7 +7,7 @@ contract Thief {
     }
 
     function steal(Flag flag, bytes32 braggingRights) public {
-    	flag.capture(braggingRights);
+        flag.capture(braggingRights);
         assert(flag.captured(this));
         msg.sender.transfer(this.balance);
     }
