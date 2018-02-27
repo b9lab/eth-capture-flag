@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+const fs = require("fs");
+
 // Pass parameters to this script
 //     - cohort folder
 if (process.argv.length < 3) {
@@ -7,6 +9,11 @@ if (process.argv.length < 3) {
     process.exit(1);
 }
 const gethIpc = process.argv[2];
+
+if (!fs.existsSync(gethIpc)) {
+    console.error("File", gethIpc, "does not exist");
+    process.exit(2);
+}
 
 const Promise = require("bluebird");
 const BigNumber = require("bignumber.js");
