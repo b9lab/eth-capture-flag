@@ -69,7 +69,7 @@ const watchToSteal =function(web3, flag, thief, account) {
         }));
 };
 
-let goCount = 0;
+var goCount = 0;
 
 const oneGoWatchToSteal = function() {
     console.log(new Date(), "Launching Go", goCount++);
