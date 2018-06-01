@@ -15,3 +15,5 @@ You need to capture the flag, or rather to put Ether in the `Flag` contract with
 * The `sneakUpOn` function is totally useless and acts as a decoy. Do not remove it.
 
 When deploying the IPFS page, you need to adjust, manually?, for `./static` and `../../fonts`.
+
+Current IPFS location: http://ipfs.b9lab.com:8080/ipfs/QmNidcNaGnresM8EFhU5J3gWV9Sfan5CX3qwcTfruNJN8x/
