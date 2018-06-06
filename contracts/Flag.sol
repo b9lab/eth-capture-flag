@@ -10,14 +10,14 @@ contract Flag {
     }
 
     function sneakUpOn() public payable {
-        LogSneakedUpOn(msg.sender, msg.value);
+        emit LogSneakedUpOn(msg.sender, msg.value);
         msg.sender.transfer(msg.value);
     }
 
     function capture(bytes32 braggingRights) public {
-        require(this.balance > 0);
+        require(address(this).balance > 0);
         captured[msg.sender] = true;
-        LogCaptured(msg.sender, braggingRights);
-        msg.sender.transfer(this.balance);
+        emit LogCaptured(msg.sender, braggingRights);
+        msg.sender.transfer(address(this).balance);
     }
 }

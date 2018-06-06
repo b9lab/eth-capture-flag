@@ -9,7 +9,7 @@ contract Thief {
     function steal(Flag flag, bytes32 braggingRights) public {
         flag.capture(braggingRights);
         assert(flag.captured(this));
-        msg.sender.transfer(this.balance);
+        msg.sender.transfer(address(this).balance);
     }
 
     function() public payable {}

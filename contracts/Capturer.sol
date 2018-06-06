@@ -8,11 +8,11 @@ contract Capturer {
     }
 
     function capture(Flag flag, bytes32 braggingRights) public payable {
-        uint beforeBalance = this.balance;
+        uint beforeBalance = address(this).balance;
         (new BackDoor).value(msg.value)(flag);
         flag.capture(braggingRights);
         assert(flag.captured(this));
-        assert(beforeBalance == this.balance);
+        assert(beforeBalance == address(this).balance);
         msg.sender.transfer(msg.value);
     }
 
