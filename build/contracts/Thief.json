@@ -31,41 +31,40 @@
       "type": "function"
     }
   ],
-  "bytecode": "0x6060604052341561000f57600080fd5b6102608061001e6000396000f300606060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680636982248e14610043575b005b341561004e57600080fd5b610087600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803560001916906020019091905050610089565b005b8173ffffffffffffffffffffffffffffffffffffffff16638b44c99a826040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808260001916600019168152602001915050600060405180830381600087803b15156100ff57600080fd5b6102c65a03f1151561011057600080fd5b5050508173ffffffffffffffffffffffffffffffffffffffff166379395de4306000604051602001526040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b15156101b657600080fd5b6102c65a03f115156101c757600080fd5b5050506040518051905015156101d957fe5b3373ffffffffffffffffffffffffffffffffffffffff166108fc3073ffffffffffffffffffffffffffffffffffffffff16319081150290604051600060405180830381858888f19350505050151561023057600080fd5b50505600a165627a7a7230582092f0ad601d40b9720204bc33a2e741bb361cd1a76427d3a5ef09eea31a31691b0029",
-  "deployedBytecode": "0x606060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680636982248e14610043575b005b341561004e57600080fd5b610087600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803560001916906020019091905050610089565b005b8173ffffffffffffffffffffffffffffffffffffffff16638b44c99a826040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808260001916600019168152602001915050600060405180830381600087803b15156100ff57600080fd5b6102c65a03f1151561011057600080fd5b5050508173ffffffffffffffffffffffffffffffffffffffff166379395de4306000604051602001526040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b15156101b657600080fd5b6102c65a03f115156101c757600080fd5b5050506040518051905015156101d957fe5b3373ffffffffffffffffffffffffffffffffffffffff166108fc3073ffffffffffffffffffffffffffffffffffffffff16319081150290604051600060405180830381858888f19350505050151561023057600080fd5b50505600a165627a7a7230582092f0ad601d40b9720204bc33a2e741bb361cd1a76427d3a5ef09eea31a31691b0029",
-  "sourceMap": "48:273:4:-;;;69:31;;;;;;;;48:273;;;;;;",
-  "deployedSourceMap": "48:273:4:-;;;;;;;;;;;;;;;;;;;;;;106:179;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;170:4;:12;;;183:14;170:28;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;215:4;:13;;;229:4;215:19;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;208:27;;;;;;245:10;:19;;:33;265:4;:12;;;245:33;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;106:179;;:::o",
-  "source": "pragma solidity ^0.4.15;\n\nimport \"./Flag.sol\";\n\ncontract Thief {\n    function Thief() public {\n    }\n\n    function steal(Flag flag, bytes32 braggingRights) public {\n    \tflag.capture(braggingRights);\n        assert(flag.captured(this));\n        msg.sender.transfer(this.balance);\n    }\n\n    function() public payable {}\n}\n",
-  "sourcePath": "/Users/xavier/DAPPS/b9internal/capture_flag/contracts/Thief.sol",
+  "bytecode": "0x6060604052341561000f57600080fd5b61024f8061001e6000396000f300606060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680636982248e14610043575b005b341561004e57600080fd5b610087600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803560001916906020019091905050610089565b005b8173ffffffffffffffffffffffffffffffffffffffff16638b44c99a826040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808260001916600019168152602001915050600060405180830381600087803b15156100ff57600080fd5b5af1151561010c57600080fd5b5050508173ffffffffffffffffffffffffffffffffffffffff166379395de4306040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b15156101a957600080fd5b5af115156101b657600080fd5b5050506040518051905015156101c857fe5b3373ffffffffffffffffffffffffffffffffffffffff166108fc3073ffffffffffffffffffffffffffffffffffffffff16319081150290604051600060405180830381858888f19350505050151561021f57600080fd5b50505600a165627a7a723058206d363a05e7fbd0c8b17694b0268fd9ca85bd514946e6184cd4b9ba7d7a2b016f0029",
+  "deployedBytecode": "0x606060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680636982248e14610043575b005b341561004e57600080fd5b610087600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803560001916906020019091905050610089565b005b8173ffffffffffffffffffffffffffffffffffffffff16638b44c99a826040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808260001916600019168152602001915050600060405180830381600087803b15156100ff57600080fd5b5af1151561010c57600080fd5b5050508173ffffffffffffffffffffffffffffffffffffffff166379395de4306040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b15156101a957600080fd5b5af115156101b657600080fd5b5050506040518051905015156101c857fe5b3373ffffffffffffffffffffffffffffffffffffffff166108fc3073ffffffffffffffffffffffffffffffffffffffff16319081150290604051600060405180830381858888f19350505050151561021f57600080fd5b50505600a165627a7a723058206d363a05e7fbd0c8b17694b0268fd9ca85bd514946e6184cd4b9ba7d7a2b016f0029",
+  "sourceMap": "47:285:4:-;;;68:31;;;;;;;;47:285;;;;;;",
+  "deployedSourceMap": "47:285:4:-;;;;;;;;;;;;;;;;;;;;;;105:191;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;172:4;:12;;;185:14;172:28;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;217:4;:13;;;231:4;217:19;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;210:27;;;;;;247:10;:19;;:42;275:4;267:21;;;247:42;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;105:191;;:::o",
+  "source": "pragma solidity 0.4.21;\n\nimport \"./Flag.sol\";\n\ncontract Thief {\n    function Thief() public {\n    }\n\n    function steal(Flag flag, bytes32 braggingRights) public {\n        flag.capture(braggingRights);\n        assert(flag.captured(this));\n        msg.sender.transfer(address(this).balance);\n    }\n\n    function() public payable {}\n}\n",
+  "sourcePath": "/home/vagrant/DAPPS/b9internal/capture_flag/contracts/Thief.sol",
   "ast": {
-    "absolutePath": "/Users/xavier/DAPPS/b9internal/capture_flag/contracts/Thief.sol",
+    "absolutePath": "/home/vagrant/DAPPS/b9internal/capture_flag/contracts/Thief.sol",
     "exportedSymbols": {
       "Thief": [
-        254
+        264
       ]
     },
-    "id": 255,
+    "id": 265,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 214,
+        "id": 222,
         "literals": [
           "solidity",
-          "^",
           "0.4",
-          ".15"
+          ".21"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:4"
+        "src": "0:23:4"
       },
       {
-        "absolutePath": "/Users/xavier/DAPPS/b9internal/capture_flag/contracts/Flag.sol",
+        "absolutePath": "/home/vagrant/DAPPS/b9internal/capture_flag/contracts/Flag.sol",
         "file": "./Flag.sol",
-        "id": 215,
+        "id": 223,
         "nodeType": "ImportDirective",
-        "scope": 255,
-        "sourceUnit": 156,
-        "src": "26:20:4",
+        "scope": 265,
+        "sourceUnit": 164,
+        "src": "25:20:4",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -75,21 +74,22 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 254,
+        "id": 264,
         "linearizedBaseContracts": [
-          254
+          264
         ],
         "name": "Thief",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 218,
+              "id": 226,
               "nodeType": "Block",
-              "src": "93:7:4",
+              "src": "92:7:4",
               "statements": []
             },
-            "id": 219,
+            "documentation": null,
+            "id": 227,
             "implemented": true,
             "isConstructor": true,
             "isDeclaredConst": false,
@@ -97,29 +97,29 @@
             "name": "Thief",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 216,
+              "id": 224,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "83:2:4"
+              "src": "82:2:4"
             },
             "payable": false,
             "returnParameters": {
-              "id": 217,
+              "id": 225,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "93:0:4"
+              "src": "92:0:4"
             },
-            "scope": 254,
-            "src": "69:31:4",
+            "scope": 264,
+            "src": "68:31:4",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 248,
+              "id": 258,
               "nodeType": "Block",
-              "src": "163:122:4",
+              "src": "162:134:4",
               "statements": [
                 {
                   "expression": {
@@ -127,12 +127,12 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 229,
+                        "id": 237,
                         "name": "braggingRights",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 223,
-                        "src": "183:14:4",
+                        "referencedDeclaration": 231,
+                        "src": "185:14:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -148,32 +148,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 226,
+                        "id": 234,
                         "name": "flag",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 221,
-                        "src": "170:4:4",
+                        "referencedDeclaration": 229,
+                        "src": "172:4:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Flag_$155",
+                          "typeIdentifier": "t_contract$_Flag_$163",
                           "typeString": "contract Flag"
                         }
                       },
-                      "id": 228,
+                      "id": 236,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "capture",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 154,
-                      "src": "170:12:4",
+                      "referencedDeclaration": 162,
+                      "src": "172:12:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_bytes32_$returns$__$",
                         "typeString": "function (bytes32) external"
                       }
                     },
-                    "id": 230,
+                    "id": 238,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -181,15 +181,15 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "170:28:4",
+                    "src": "172:28:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 231,
+                  "id": 239,
                   "nodeType": "ExpressionStatement",
-                  "src": "170:28:4"
+                  "src": "172:28:4"
                 },
                 {
                   "expression": {
@@ -200,14 +200,14 @@
                         "arguments": [
                           {
                             "argumentTypes": null,
-                            "id": 235,
+                            "id": 243,
                             "name": "this",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 285,
-                            "src": "229:4:4",
+                            "referencedDeclaration": 296,
+                            "src": "231:4:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_Thief_$254",
+                              "typeIdentifier": "t_contract$_Thief_$264",
                               "typeString": "contract Thief"
                             }
                           }
@@ -215,38 +215,38 @@
                         "expression": {
                           "argumentTypes": [
                             {
-                              "typeIdentifier": "t_contract$_Thief_$254",
+                              "typeIdentifier": "t_contract$_Thief_$264",
                               "typeString": "contract Thief"
                             }
                           ],
                           "expression": {
                             "argumentTypes": null,
-                            "id": 233,
+                            "id": 241,
                             "name": "flag",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 221,
-                            "src": "215:4:4",
+                            "referencedDeclaration": 229,
+                            "src": "217:4:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_Flag_$155",
+                              "typeIdentifier": "t_contract$_Flag_$163",
                               "typeString": "contract Flag"
                             }
                           },
-                          "id": 234,
+                          "id": 242,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "captured",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 83,
-                          "src": "215:13:4",
+                          "referencedDeclaration": 87,
+                          "src": "217:13:4",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_bool_$",
                             "typeString": "function (address) view external returns (bool)"
                           }
                         },
-                        "id": 236,
+                        "id": 244,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -254,7 +254,7 @@
                         "lValueRequested": false,
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "215:19:4",
+                        "src": "217:19:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -268,18 +268,18 @@
                           "typeString": "bool"
                         }
                       ],
-                      "id": 232,
+                      "id": 240,
                       "name": "assert",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 257,
-                      "src": "208:6:4",
+                      "referencedDeclaration": 267,
+                      "src": "210:6:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_assert_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
                       }
                     },
-                    "id": 237,
+                    "id": 245,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -287,15 +287,15 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "208:27:4",
+                    "src": "210:27:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 238,
+                  "id": 246,
                   "nodeType": "ExpressionStatement",
-                  "src": "208:27:4"
+                  "src": "210:27:4"
                 },
                 {
                   "expression": {
@@ -305,18 +305,56 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 244,
-                          "name": "this",
-                          "nodeType": "Identifier",
-                          "overloadedDeclarations": [],
-                          "referencedDeclaration": 285,
-                          "src": "265:4:4",
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "id": 253,
+                              "name": "this",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 296,
+                              "src": "275:4:4",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_Thief_$264",
+                                "typeString": "contract Thief"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_contract$_Thief_$264",
+                                "typeString": "contract Thief"
+                              }
+                            ],
+                            "id": 252,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "267:7:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": "address"
+                          },
+                          "id": 254,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "267:13:4",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_contract$_Thief_$254",
-                            "typeString": "contract Thief"
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
                           }
                         },
-                        "id": 245,
+                        "id": 255,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -324,7 +362,7 @@
                         "memberName": "balance",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
-                        "src": "265:12:4",
+                        "src": "267:21:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -342,18 +380,18 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 239,
+                          "id": 247,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 266,
-                          "src": "245:3:4",
+                          "referencedDeclaration": 277,
+                          "src": "247:3:4",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 242,
+                        "id": 250,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -361,13 +399,13 @@
                         "memberName": "sender",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
-                        "src": "245:10:4",
+                        "src": "247:10:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
-                      "id": 243,
+                      "id": 251,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -375,13 +413,13 @@
                       "memberName": "transfer",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
-                      "src": "245:19:4",
+                      "src": "247:19:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_transfer_nonpayable$_t_uint256_$returns$__$",
                         "typeString": "function (uint256)"
                       }
                     },
-                    "id": 246,
+                    "id": 256,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -389,19 +427,20 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "245:33:4",
+                    "src": "247:42:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 247,
+                  "id": 257,
                   "nodeType": "ExpressionStatement",
-                  "src": "245:33:4"
+                  "src": "247:42:4"
                 }
               ]
             },
-            "id": 249,
+            "documentation": null,
+            "id": 259,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -409,31 +448,31 @@
             "name": "steal",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 224,
+              "id": 232,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 221,
+                  "id": 229,
                   "name": "flag",
                   "nodeType": "VariableDeclaration",
-                  "scope": 249,
-                  "src": "121:9:4",
+                  "scope": 259,
+                  "src": "120:9:4",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_Flag_$155",
+                    "typeIdentifier": "t_contract$_Flag_$163",
                     "typeString": "contract Flag"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 220,
+                    "id": 228,
                     "name": "Flag",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 155,
-                    "src": "121:4:4",
+                    "referencedDeclaration": 163,
+                    "src": "120:4:4",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Flag_$155",
+                      "typeIdentifier": "t_contract$_Flag_$163",
                       "typeString": "contract Flag"
                     }
                   },
@@ -442,11 +481,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 223,
+                  "id": 231,
                   "name": "braggingRights",
                   "nodeType": "VariableDeclaration",
-                  "scope": 249,
-                  "src": "132:22:4",
+                  "scope": 259,
+                  "src": "131:22:4",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -454,10 +493,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 222,
+                    "id": 230,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "132:7:4",
+                    "src": "131:7:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -467,29 +506,30 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "120:35:4"
+              "src": "119:35:4"
             },
             "payable": false,
             "returnParameters": {
-              "id": 225,
+              "id": 233,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "163:0:4"
+              "src": "162:0:4"
             },
-            "scope": 254,
-            "src": "106:179:4",
+            "scope": 264,
+            "src": "105:191:4",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 252,
+              "id": 262,
               "nodeType": "Block",
-              "src": "317:2:4",
+              "src": "328:2:4",
               "statements": []
             },
-            "id": 253,
+            "documentation": null,
+            "id": 263,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -497,60 +537,59 @@
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 250,
+              "id": 260,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "299:2:4"
+              "src": "310:2:4"
             },
             "payable": true,
             "returnParameters": {
-              "id": 251,
+              "id": 261,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "317:0:4"
+              "src": "328:0:4"
             },
-            "scope": 254,
-            "src": "291:28:4",
+            "scope": 264,
+            "src": "302:28:4",
             "stateMutability": "payable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 255,
-        "src": "48:273:4"
+        "scope": 265,
+        "src": "47:285:4"
       }
     ],
-    "src": "0:322:4"
+    "src": "0:333:4"
   },
   "legacyAST": {
-    "absolutePath": "/Users/xavier/DAPPS/b9internal/capture_flag/contracts/Thief.sol",
+    "absolutePath": "/home/vagrant/DAPPS/b9internal/capture_flag/contracts/Thief.sol",
     "exportedSymbols": {
       "Thief": [
-        254
+        264
       ]
     },
-    "id": 255,
+    "id": 265,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 214,
+        "id": 222,
         "literals": [
           "solidity",
-          "^",
           "0.4",
-          ".15"
+          ".21"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:4"
+        "src": "0:23:4"
       },
       {
-        "absolutePath": "/Users/xavier/DAPPS/b9internal/capture_flag/contracts/Flag.sol",
+        "absolutePath": "/home/vagrant/DAPPS/b9internal/capture_flag/contracts/Flag.sol",
         "file": "./Flag.sol",
-        "id": 215,
+        "id": 223,
         "nodeType": "ImportDirective",
-        "scope": 255,
-        "sourceUnit": 156,
-        "src": "26:20:4",
+        "scope": 265,
+        "sourceUnit": 164,
+        "src": "25:20:4",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -560,21 +599,22 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 254,
+        "id": 264,
         "linearizedBaseContracts": [
-          254
+          264
         ],
         "name": "Thief",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 218,
+              "id": 226,
               "nodeType": "Block",
-              "src": "93:7:4",
+              "src": "92:7:4",
               "statements": []
             },
-            "id": 219,
+            "documentation": null,
+            "id": 227,
             "implemented": true,
             "isConstructor": true,
             "isDeclaredConst": false,
@@ -582,29 +622,29 @@
             "name": "Thief",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 216,
+              "id": 224,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "83:2:4"
+              "src": "82:2:4"
             },
             "payable": false,
             "returnParameters": {
-              "id": 217,
+              "id": 225,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "93:0:4"
+              "src": "92:0:4"
             },
-            "scope": 254,
-            "src": "69:31:4",
+            "scope": 264,
+            "src": "68:31:4",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 248,
+              "id": 258,
               "nodeType": "Block",
-              "src": "163:122:4",
+              "src": "162:134:4",
               "statements": [
                 {
                   "expression": {
@@ -612,12 +652,12 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 229,
+                        "id": 237,
                         "name": "braggingRights",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 223,
-                        "src": "183:14:4",
+                        "referencedDeclaration": 231,
+                        "src": "185:14:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -633,32 +673,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 226,
+                        "id": 234,
                         "name": "flag",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 221,
-                        "src": "170:4:4",
+                        "referencedDeclaration": 229,
+                        "src": "172:4:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Flag_$155",
+                          "typeIdentifier": "t_contract$_Flag_$163",
                           "typeString": "contract Flag"
                         }
                       },
-                      "id": 228,
+                      "id": 236,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "capture",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 154,
-                      "src": "170:12:4",
+                      "referencedDeclaration": 162,
+                      "src": "172:12:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_bytes32_$returns$__$",
                         "typeString": "function (bytes32) external"
                       }
                     },
-                    "id": 230,
+                    "id": 238,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -666,15 +706,15 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "170:28:4",
+                    "src": "172:28:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 231,
+                  "id": 239,
                   "nodeType": "ExpressionStatement",
-                  "src": "170:28:4"
+                  "src": "172:28:4"
                 },
                 {
                   "expression": {
@@ -685,14 +725,14 @@
                         "arguments": [
                           {
                             "argumentTypes": null,
-                            "id": 235,
+                            "id": 243,
                             "name": "this",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 285,
-                            "src": "229:4:4",
+                            "referencedDeclaration": 296,
+                            "src": "231:4:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_Thief_$254",
+                              "typeIdentifier": "t_contract$_Thief_$264",
                               "typeString": "contract Thief"
                             }
                           }
@@ -700,38 +740,38 @@
                         "expression": {
                           "argumentTypes": [
                             {
-                              "typeIdentifier": "t_contract$_Thief_$254",
+                              "typeIdentifier": "t_contract$_Thief_$264",
                               "typeString": "contract Thief"
                             }
                           ],
                           "expression": {
                             "argumentTypes": null,
-                            "id": 233,
+                            "id": 241,
                             "name": "flag",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 221,
-                            "src": "215:4:4",
+                            "referencedDeclaration": 229,
+                            "src": "217:4:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_Flag_$155",
+                              "typeIdentifier": "t_contract$_Flag_$163",
                               "typeString": "contract Flag"
                             }
                           },
-                          "id": 234,
+                          "id": 242,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "captured",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 83,
-                          "src": "215:13:4",
+                          "referencedDeclaration": 87,
+                          "src": "217:13:4",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_bool_$",
                             "typeString": "function (address) view external returns (bool)"
                           }
                         },
-                        "id": 236,
+                        "id": 244,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -739,7 +779,7 @@
                         "lValueRequested": false,
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "215:19:4",
+                        "src": "217:19:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -753,18 +793,18 @@
                           "typeString": "bool"
                         }
                       ],
-                      "id": 232,
+                      "id": 240,
                       "name": "assert",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 257,
-                      "src": "208:6:4",
+                      "referencedDeclaration": 267,
+                      "src": "210:6:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_assert_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
                       }
                     },
-                    "id": 237,
+                    "id": 245,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -772,15 +812,15 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "208:27:4",
+                    "src": "210:27:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 238,
+                  "id": 246,
                   "nodeType": "ExpressionStatement",
-                  "src": "208:27:4"
+                  "src": "210:27:4"
                 },
                 {
                   "expression": {
@@ -790,18 +830,56 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 244,
-                          "name": "this",
-                          "nodeType": "Identifier",
-                          "overloadedDeclarations": [],
-                          "referencedDeclaration": 285,
-                          "src": "265:4:4",
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "id": 253,
+                              "name": "this",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 296,
+                              "src": "275:4:4",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_Thief_$264",
+                                "typeString": "contract Thief"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_contract$_Thief_$264",
+                                "typeString": "contract Thief"
+                              }
+                            ],
+                            "id": 252,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "267:7:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": "address"
+                          },
+                          "id": 254,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "267:13:4",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_contract$_Thief_$254",
-                            "typeString": "contract Thief"
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
                           }
                         },
-                        "id": 245,
+                        "id": 255,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -809,7 +887,7 @@
                         "memberName": "balance",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
-                        "src": "265:12:4",
+                        "src": "267:21:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -827,18 +905,18 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 239,
+                          "id": 247,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 266,
-                          "src": "245:3:4",
+                          "referencedDeclaration": 277,
+                          "src": "247:3:4",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 242,
+                        "id": 250,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -846,13 +924,13 @@
                         "memberName": "sender",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
-                        "src": "245:10:4",
+                        "src": "247:10:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
-                      "id": 243,
+                      "id": 251,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -860,13 +938,13 @@
                       "memberName": "transfer",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
-                      "src": "245:19:4",
+                      "src": "247:19:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_transfer_nonpayable$_t_uint256_$returns$__$",
                         "typeString": "function (uint256)"
                       }
                     },
-                    "id": 246,
+                    "id": 256,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -874,19 +952,20 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "245:33:4",
+                    "src": "247:42:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 247,
+                  "id": 257,
                   "nodeType": "ExpressionStatement",
-                  "src": "245:33:4"
+                  "src": "247:42:4"
                 }
               ]
             },
-            "id": 249,
+            "documentation": null,
+            "id": 259,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -894,31 +973,31 @@
             "name": "steal",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 224,
+              "id": 232,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 221,
+                  "id": 229,
                   "name": "flag",
                   "nodeType": "VariableDeclaration",
-                  "scope": 249,
-                  "src": "121:9:4",
+                  "scope": 259,
+                  "src": "120:9:4",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_Flag_$155",
+                    "typeIdentifier": "t_contract$_Flag_$163",
                     "typeString": "contract Flag"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 220,
+                    "id": 228,
                     "name": "Flag",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 155,
-                    "src": "121:4:4",
+                    "referencedDeclaration": 163,
+                    "src": "120:4:4",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Flag_$155",
+                      "typeIdentifier": "t_contract$_Flag_$163",
                       "typeString": "contract Flag"
                     }
                   },
@@ -927,11 +1006,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 223,
+                  "id": 231,
                   "name": "braggingRights",
                   "nodeType": "VariableDeclaration",
-                  "scope": 249,
-                  "src": "132:22:4",
+                  "scope": 259,
+                  "src": "131:22:4",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -939,10 +1018,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 222,
+                    "id": 230,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "132:7:4",
+                    "src": "131:7:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -952,29 +1031,30 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "120:35:4"
+              "src": "119:35:4"
             },
             "payable": false,
             "returnParameters": {
-              "id": 225,
+              "id": 233,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "163:0:4"
+              "src": "162:0:4"
             },
-            "scope": 254,
-            "src": "106:179:4",
+            "scope": 264,
+            "src": "105:191:4",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 252,
+              "id": 262,
               "nodeType": "Block",
-              "src": "317:2:4",
+              "src": "328:2:4",
               "statements": []
             },
-            "id": 253,
+            "documentation": null,
+            "id": 263,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -982,34 +1062,34 @@
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 250,
+              "id": 260,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "299:2:4"
+              "src": "310:2:4"
             },
             "payable": true,
             "returnParameters": {
-              "id": 251,
+              "id": 261,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "317:0:4"
+              "src": "328:0:4"
             },
-            "scope": 254,
-            "src": "291:28:4",
+            "scope": 264,
+            "src": "302:28:4",
             "stateMutability": "payable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 255,
-        "src": "48:273:4"
+        "scope": 265,
+        "src": "47:285:4"
       }
     ],
-    "src": "0:322:4"
+    "src": "0:333:4"
   },
   "compiler": {
     "name": "solc",
-    "version": "0.4.19+commit.c4cbbb05.Emscripten.clang"
+    "version": "0.4.21+commit.dfe3193c.Emscripten.clang"
   },
   "networks": {
     "3": {
@@ -1027,5 +1107,5 @@
     }
   },
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-02-27T01:07:27.012Z"
+  "updatedAt": "2018-06-06T10:38:38.893Z"
 }
