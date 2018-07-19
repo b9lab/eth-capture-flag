@@ -1,10 +1,10 @@
-pragma solidity 0.4.21;
+pragma solidity 0.4.24;
 
 import "./Flag.sol";
 import "./BackDoor.sol";
 
 contract Capturer {
-    function Capturer() public {
+    constructor() public {
     }
 
     function capture(Flag flag, bytes32 braggingRights) public payable {

@@ -1,9 +1,9 @@
-pragma solidity 0.4.21;
+pragma solidity 0.4.24;
 
 import "./Flag.sol";
 
 contract Thief {
-    function Thief() public {
+    constructor() public {
     }
 
     function steal(Flag flag, bytes32 braggingRights) public {

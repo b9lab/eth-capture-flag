@@ -1,4 +1,4 @@
-pragma solidity 0.4.21;
+pragma solidity 0.4.24;
 
 contract Flag {
     mapping (address => bool) public captured;
@@ -6,7 +6,7 @@ contract Flag {
     event LogSneakedUpOn(address indexed who, uint howMuch);
     event LogCaptured(address indexed who, bytes32 braggingRights);
 
-    function Flag() public {
+    constructor() public {
     }
 
     function sneakUpOn() public payable {

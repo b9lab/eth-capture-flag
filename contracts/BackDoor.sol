@@ -1,7 +1,7 @@
-pragma solidity 0.4.21;
+pragma solidity 0.4.24;
 
 contract BackDoor {
-    function BackDoor(address target) public payable {
+    constructor(address target) public payable {
         selfdestruct(target);
     }
 }
