@@ -1,68 +1,57 @@
-const Promise = require("bluebird");
 const Thief = artifacts.require("./Thief.sol");
 const Flag = artifacts.require("./Flag.sol");
 const BackDoor = artifacts.require("./BackDoor.sol");
-const expectedExceptionPromise = require("../utils/expectedExceptionPromise.js");
 web3.eth.getTransactionReceiptMined = require("../utils/getTransactionReceiptMined.js");
 
-Promise.promisifyAll(web3.eth, { suffix: "Promise" });
+const { fromUtf8, sha3, toBN, toUtf8 } = web3.utils;
 
-contract('Thief', function(accounts) {
+contract.only('Thief', function(accounts) {
     
     let flag, thief;
 
-    beforeEach("should deploy a new flag and thief", function() {
-        return Flag.new({ from: accounts[0] })
-            .then(created => flag = created)
-            .then(() => Thief.new({ from: accounts[0] }))
-            .then(created => thief = created);
+    beforeEach("should deploy a new flag and thief", async function() {
+        flag = await Flag.new({ from: accounts[0] });
+        thief = await Thief.new({ from: accounts[0] });
     });
 
-    beforeEach("should prime the flag", function() {
-        const backDoorDeployData = BackDoor.binary + flag.address.replace("0x", "000000000000000000000000");
-        return web3.eth.sendTransactionPromise({ from: accounts[0], data: backDoorDeployData, value: 30, gas: 3000000 })
-            .then(txHash => web3.eth.getTransactionReceiptMined(txHash));
+    beforeEach("should prime the flag", async function() {
+        await BackDoor.new(flag.address, { from: accounts[0], value: 30, gas: 3000000})
+            // Bypassing bug https://github.com/trufflesuite/truffle/issues/2398
+            .catch(e => {});
     });
 
-    it("should have 0 balance after capture", function() {
-        return thief.steal(flag.address, "mwahaha", { from: accounts[0] })
-            .then(txObj => web3.eth.getBalancePromise(thief.address))
-            .then(balance => assert.strictEqual(balance.toNumber(), 0));
+    it("should have 0 balance after capture", async function() {
+        await thief.steal(flag.address, fromUtf8("mwahaha"), { from: accounts[0] });
+        const balance = await web3.eth.getBalance(thief.address);
+        assert.strictEqual(balance, "0");
     });
 
-    it("should have captured", function() {
-        return flag.captured(thief.address)
-            .then(captured => assert.isFalse(captured))
-            .then(() => thief.steal(flag.address, "mwahaha", { from: accounts[0] }))
-            .then(txObj => flag.captured(thief.address))
-            .then(captured => assert.isTrue(captured));
+    it("should have captured", async function() {
+        assert.isFalse(await flag.captured(thief.address));
+        await thief.steal(flag.address, fromUtf8("mwahaha"), { from: accounts[0] });
+        assert.isTrue(await flag.captured(thief.address));
     });
 
 
-    it("should have bragging rights", function() {
-        return thief.steal(flag.address, "mwahaha", { from: accounts[0] })
-            .then(txObj => {
-                assert.strictEqual(txObj.logs.length, 0);
-                assert.strictEqual(txObj.receipt.logs.length, 1);
-                const brag = txObj.receipt.logs[0];
-                assert.strictEqual(brag.topics[0], web3.sha3("LogCaptured(address,bytes32)"));
-                flag.LogCaptured().formatter(brag);
-                assert.strictEqual(brag.event, "LogCaptured");
-                assert.strictEqual(brag.args.who, thief.address);
-                assert.strictEqual(web3.toUtf8(brag.args.braggingRights), "mwahaha");
-            });
+    it("should have bragging rights", async function() {
+        const txObj = await thief.steal(flag.address, fromUtf8("mwahaha"), { from: accounts[0] });
+        assert.strictEqual(txObj.logs.length, 0);
+        assert.strictEqual(txObj.receipt.rawLogs.length, 1);
+        const brag = txObj.receipt.rawLogs[0];
+        assert.strictEqual(brag.topics[0], sha3("LogCaptured(address,bytes32)"));
+        flag.contract.events.LogCaptured().options.subscription.outputFormatter(brag);
+        assert.strictEqual(brag.event, "LogCaptured");
+        assert.strictEqual(brag.returnValues.who, thief.address);
+        assert.strictEqual(toUtf8(brag.returnValues.braggingRights), "mwahaha");
     });
 
-    it("should have returned primed Ether to sender", function() {
-        let balanceBefore, gasPrice, txFee;
-        return web3.eth.getBalancePromise(accounts[0])
-            .then(balance => balanceBefore = balance)
-            .then(() => web3.eth.getGasPricePromise())
-            .then(_gasPrice => gasPrice = web3.toBigNumber(_gasPrice))
-            .then(() => thief.steal(flag.address, "mwahaha", { from: accounts[0], gasPrice: gasPrice }))
-            .then(txObj => txFee = gasPrice.times(txObj.receipt.gasUsed))
-            .then(() => web3.eth.getBalancePromise(accounts[0]))
-            .then(balance => assert.strictEqual(balance.toString(10), balanceBefore.minus(txFee).plus(30).toString(10)));
+    it("should have returned primed Ether to sender", async function() {
+        const balanceBefore = await web3.eth.getBalance(accounts[0]);
+        const gasPrice = await web3.eth.getGasPrice();
+        const txObj = await thief.steal(flag.address, fromUtf8("mwahaha"), { from: accounts[0], gasPrice: gasPrice });
+        const txFee = toBN(gasPrice).mul(toBN(txObj.receipt.gasUsed));
+        const balance = await web3.eth.getBalance(accounts[0]);
+        assert.strictEqual(balance, toBN(balanceBefore).sub(txFee).add(toBN(30)).toString(10));
     });
 
 });
