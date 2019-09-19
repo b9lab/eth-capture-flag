@@ -1,4 +1,4 @@
-pragma solidity 0.4.24;
+pragma solidity 0.5.8;
 
 import "./Flag.sol";
 
@@ -8,9 +8,9 @@ contract Thief {
 
     function steal(Flag flag, bytes32 braggingRights) public {
         flag.capture(braggingRights);
-        assert(flag.captured(this));
+        assert(flag.captured(address(this)));
         msg.sender.transfer(address(this).balance);
     }
 
-    function() public payable {}
+    function() external payable {}
 }
